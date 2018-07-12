@@ -1,6 +1,10 @@
 <template>
     <div id="app" ref="container">
         <p class="unselectable">Balls clicked: {{ballsClicked}}</p>
+        <svg width="400" height="110" v-touch:tap="alert">
+            <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        </svg>
+        <button @click="alert">Click me!</button>
     </div>    
 </template>
 
@@ -8,6 +12,9 @@
 import Vue from 'vue'
 import Ball from '../components/Ball'
 import { mapGetters, mapState } from 'vuex'
+import VueTouch from 'vue-touch';
+
+Vue.use(VueTouch);
 
 export default {
     name: "BallsLevel",
@@ -26,6 +33,9 @@ export default {
         })
     },
     methods : {
+        alert: function() {
+            alert("Alert!");
+        },
         addBall: function() {
             if (this.ballsTotal > 10)
                 return;

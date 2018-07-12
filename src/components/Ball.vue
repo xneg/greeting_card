@@ -2,7 +2,7 @@
     <div id="app">
         <!-- <div id="ball" @click="click" ref="ball" :style='{left: initialPosition}' v-if="alive"></div>  -->
         <svg
-            id="ball" @click="click" @tap="click" ref="ball" :style='{left: initialPosition}' v-if="alive"
+            id="ball" v-touch:tap= "click" ref="ball" :style='{left: initialPosition}' v-if="alive"
             xmlns:dc="http://purl.org/dc/elements/1.1/"
             xmlns:cc="http://creativecommons.org/ns#"
             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
