@@ -14,6 +14,11 @@ export default {
     components: {
         Ball
     },
+    data: function() {
+        return {
+            timer: null
+        }
+    },
     computed: {
         ...mapState({
             ballsClicked: state => state.ballsClicked,
@@ -30,15 +35,24 @@ export default {
             })
             instance.$mount() // pass nothing
             this.$refs.container.appendChild(instance.$el)
+        },
+        stopTimer: function() {
+
+        },
+        startTimer: function() {
+            var vm = this;
+            this.timer = setInterval(function() {
+                vm.addBall();
+            }, 500);
         }
     },
     mounted: function() {
-        var vm = this;
-        setInterval(function() {
-            vm.addBall();
-        }, 500);
+        window.addEventListener('focus', this.startTimer);
+        window.addEventListener('blur', this.stopTimer);
+        this.startTimer();
     }
 }
+
 </script>
 
 <style scoped>
