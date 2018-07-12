@@ -7,12 +7,19 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
     state: {
-        ballsClicked: 0
+        ballsClicked: 0,
+        ballsTotal: 0,
     },
     mutations: {
         ballsClickedIncrement(state) {
             // изменяем состояние
             state.ballsClicked++;
-          }
+        },
+        ballsTotalIncrement(state) {
+            state.ballsTotal++;
+        },
+        ballsTotalDecrement(state) {
+            state.ballsTotal--;
+        }
     }
 })

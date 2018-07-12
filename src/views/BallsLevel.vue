@@ -1,6 +1,6 @@
 <template>
     <div id="app" ref="container">
-        <p>Balls clicked: {{ballsClicked}}</p>
+        <p class="unselectable">Balls clicked: {{ballsClicked}}</p>
     </div>    
 </template>
 
@@ -16,11 +16,14 @@ export default {
     },
     computed: {
         ...mapState({
-        ballsClicked: state => state.ballsClicked
+            ballsClicked: state => state.ballsClicked,
+            ballsTotal: state => state.ballsTotal
         })
     },
     methods : {
         addBall: function() {
+            if (this.ballsTotal > 10)
+                return;
             var ComponentClass = Vue.extend(Ball)
             var instance = new ComponentClass({
                 parent: this
@@ -43,6 +46,15 @@ export default {
         max-width: 100%;
         overflow-x: hidden;
         overflow-y: hidden;
+    }
+
+    .unselectable {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 </style>
 

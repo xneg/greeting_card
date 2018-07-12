@@ -2,7 +2,7 @@
     <div id="app">
         <!-- <div id="ball" @click="click" ref="ball" :style='{left: initialPosition}' v-if="alive"></div>  -->
         <svg
-            id="ball" @click="click" ref="ball" :style='{left: initialPosition}' v-if="alive"
+            id="ball" @click="click" @tap="click" ref="ball" :style='{left: initialPosition}' v-if="alive"
             xmlns:dc="http://purl.org/dc/elements/1.1/"
             xmlns:cc="http://creativecommons.org/ns#"
             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -10,8 +10,8 @@
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             viewBox="0 0 50 50"
-            height="50mm"
-            width="50mm">
+            height="100px"
+            width="100px">
             <defs
                 id="defs901" />
             <metadata
@@ -96,8 +96,7 @@ export default {
     name: "Ball",
     data: function() {
         return {
-            alive: true,
-            clicked: false    
+            alive: true
         }
     },
     computed: {
@@ -112,12 +111,16 @@ export default {
         }
     },
     methods: {
-        ...mapMutations({addBall: 'ballsClickedIncrement'}),
-        click: function() {
-            this.clicked = true;
-            console.log("clicked!");
-            this.addBall();
+        ...mapMutations({addClickedBall: 'ballsClickedIncrement'}),
+        ...mapMutations({addBall: 'ballsTotalIncrement'}),
+        ...mapMutations({deleteBall: 'ballsTotalDecrement'}),
+        destroy: function() {
+            this.deleteBall();
             this.alive = false;
+        },
+        click: function() {
+            this.addClickedBall();
+            this.destroy();
         },
         getRandomArbitrary: function(min, max) {
             return Math.random() * (max - min) + min;  
@@ -132,28 +135,17 @@ export default {
         }
     },
     mounted: function() {
+        this.addBall();
         var vm = this;
-        function destroy() {
-            vm.alive = false;
-        };
-        this.play(destroy, this.finalPosition);
+        this.play(this.destroy, this.finalPosition);
     } 
 }
-
-// function play(destroy, finalPosition) {
-//     var ball = document.getElementById('ball');
-//     var tl = new TimelineLite({delay:0.5});
-//     tl.to(ball, 2, {bottom: 0, ease:Bounce.easeOut})
-//         .to(ball, 1.5, {x: finalPosition}, "-=1.25")
-//         .to(ball, 0.2, {opacity: 0, onComplete: destroy});
-// }
-// {x:"+=450"}
 </script>
 
 <style>
     #ball {
-        height: 50px;
-        width: 50px;
+        height: 80px;
+        width: 80px;
         display: inline-block;
         position: absolute;
     }
