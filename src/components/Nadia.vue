@@ -229,9 +229,7 @@
          d="m 64.815369,63.29529 c 0.66167,2.6e-4 1.32316,0.1008 1.952868,0.30489 1.679171,0.54425 3.108593,1.81609 3.844711,3.42046 l -0.261458,0.0481 C 69.555139,65.85391 68.342588,64.911 66.959417,64.4627 c -0.629708,-0.20409 -1.291158,-0.30462 -1.952828,-0.30489 -1.10276,-5.29e-4 -2.20644,0.27738 -3.167251,0.81959 -1.687779,0.95246 -2.858741,2.61503 -4.44677,3.725871 -0.513508,0.359199 -1.166921,0.64535 -1.836578,0.86816 V 67.82425 c 0.745408,-0.21895 1.483457,-0.50223 2.001438,-0.86454 1.588031,-1.11084 2.402922,-1.89233 4.090691,-2.84479 0.96081,-0.54221 2.064498,-0.82016 3.16725,-0.81959 z"
          style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.30000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
-    <g
-       transform="rotate(50,34.900535,104.69466)"
-       id="leftArm">
+    <g id="leftArm">
       <path
          style="opacity:1;fill:#ffebde;fill-opacity:1;stroke:none;stroke-width:0.09000313;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 35.833675,101.21218 a 3.3791073,3.3791073 0 0 0 -4.138559,2.38938 l -4.209415,18.16559 5.300041,1.42014 5.437335,-17.83657 a 3.3791073,3.3791073 0 0 0 -2.389402,-4.13854 z"
@@ -353,9 +351,7 @@
          ry="5.1502743"
          transform="scale(-1,1)" />
     </g>
-    <g
-       transform="rotate(-45,67.944046,104.69466)"
-       id="rightArm">
+    <g id="rightArm">
       <path
          id="path1001"
          d="m 67.069786,101.20448 a 3.3791073,3.3791073 0 0 1 4.138557,2.38937 l 4.209415,18.1656 -5.300041,1.42014 -5.437336,-17.83657 a 3.3791073,3.3791073 0 0 1 2.389405,-4.13854 z"
@@ -390,7 +386,7 @@
          d="m 87.456934,139.38754 a 6.8585924,4.238843 60 0 0 -3.869997,-3.75541 l -0.799793,-1.46799 -2.4301,1.40301 -2.471277,1.4268 0.904296,1.48045 a 6.8585924,4.238843 60 0 0 1.325586,5.15163 l 0.895038,1.55025 7.341283,-4.23849 z"
          id="path1013" />
     </g>
-  </g>
+    </g>
 </svg>
 </template>
 
@@ -399,5 +395,78 @@ export default {
     
 }
 </script>
+
+<style>
+    /* #leftArmAnimator{
+        -webkit-animation-duration: 4s;
+        animation-duration: 4s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        
+        transform-box: fill-box;
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-animation-name: HJGRpfq17Q_SyxV79yXQ_Animation;
+        animation-name: HJGRpfq17Q_SyxV79yXQ_Animation;
+    } */
+#leftArm {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+	-webkit-animation-name: leftArmAnimation;
+	animation-name: leftArmAnimation;
+
+    -webkit-transform-origin: 34.900535px 104.69466px;
+	transform-origin: 34.900535px 104.69466px;
+
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+#rightArm {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+	-webkit-animation-name: rightArmAnimation;
+	animation-name: rightArmAnimation;
+
+	-webkit-transform-origin: 67.944046px 104.69466px;
+	transform-origin: 67.944046px 104.69466px;
+
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+    }
+
+    @-webkit-keyframes 
+    rightArmAnimation{
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+
+    @keyframes 
+    rightArmAnimation{
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+
+    @-webkit-keyframes 
+    leftArmAnimation{
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+
+    @keyframes 
+    leftArmAnimation{
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+</style>
+
 
 
