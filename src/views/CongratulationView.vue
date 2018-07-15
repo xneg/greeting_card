@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div width=100%>
         <nadia/>
     </div>
 </template>
@@ -14,7 +14,18 @@ export default {
 </script>
 
 <style scoped>
-    /* #div {
-        background-color:#6a7590ff;
+    /* div {
+        border: 1px solid blue;
+        background-color: #6a7590ff;
     } */
+    body {
+        background-color: #6a7590ff;
+    }
+
+    /* body, html { */
+        /* max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden; */
+        /* background-color: #6a7590ff; */
+    /* } */
 </style>

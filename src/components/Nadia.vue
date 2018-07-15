@@ -6,12 +6,19 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    id="svg2706"
+   class="centralPosition"
    version="1.1"
-   viewBox="-100 0 210 297"
+   viewBox="0 -30 105 297"
    height="297mm"
    width="100%">
-  <g
-     id="layer1">
+    <ellipse
+        ry="4.8282843"
+        rx="50.399849"
+        cy="210.67899"
+        cx="52.004196"
+        id="path2992"
+        style="opacity:0.3;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.19388485;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <g id="nadia">
     <g
        id="body">
       <path
@@ -39,8 +46,7 @@
          d="m 40.068895,136.59488 a 12.943451,19.018737 0 0 0 -2.615343,10.99727 v 8.44238 h 8.75347 a 6.4846359,4.0077252 0 0 1 5.215186,-1.63348 6.4846359,4.0077252 0 0 1 5.215703,1.63348 h 8.760187 v -8.44238 a 12.94345,19.018738 0 0 0 -2.615343,-10.99727 h -1.89756 -9.45937 -9.45937 z"
          id="rect1755-6" />
     </g>
-    <g
-       id="head">
+    <g id="head">
       <path
          style="opacity:1;fill:#ffcfaf;fill-opacity:1;stroke:none;stroke-width:0.05362585;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 45.923833,92.765771 v 8.132309 a 5.4981449,2.6428237 0 0 0 5.49846,2.64274 5.4981449,2.6428237 0 0 0 5.49796,-2.64274 v -8.132309 z"
@@ -212,12 +218,11 @@
          id="path1354"
          d="m 42.713019,83.09066 a 3.2717372,2.8468362 19.605273 0 1 -4.034282,1.577411 3.2717372,2.8468362 19.605273 0 1 -2.186159,-3.57583 4.3764793,1.890809 19.605273 0 0 2.699451,1.532559 4.3764793,1.890809 19.605273 0 0 3.52099,0.46586 z"
          style="opacity:0.9;fill:#ffccaa;fill-opacity:1;stroke:none;stroke-width:2.05217648;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <path
+      <path id="leftHair"
          style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 24.576968,62.34547 a 21.871974,29.645769 14.586507 0 0 -0.11522,0.27234 21.871974,29.645769 14.586507 0 0 -0.94517,2.80189 21.871974,29.645769 14.586507 0 0 -0.73742,2.87011 21.871974,29.645769 14.586507 0 0 0,5.3e-4 21.871974,29.645769 14.586507 0 0 -0.52039,2.9099 21.871974,29.645769 14.586507 0 0 -0.29972,2.919719 21.871974,29.645769 14.586507 0 0 -0.0765,2.900601 21.871974,29.645769 14.586507 0 0 0.1478,2.853082 21.871974,29.645769 14.586507 0 0 0.37052,2.776029 21.871974,29.645769 14.586507 0 0 0.58962,2.67222 21.871974,29.645769 14.586507 0 0 0.80254,2.540918 21.871974,29.645769 14.586507 0 0 1.00769,2.384351 21.871974,29.645769 14.586507 0 0 1.20301,2.204511 21.871974,29.645769 14.586507 0 0 1.38596,2.00247 21.871974,29.645769 14.586507 0 0 1.55546,1.77972 21.871974,29.645769 14.586507 0 0 1.36271,1.258329 24.22887,12.258373 0 0 1 1.289849,-1.03714 24.22887,12.258373 0 0 1 1.48777,-0.96687 24.22887,12.258373 0 0 1 1.670691,-0.88728 24.22887,12.258373 0 0 1 1.50844,-0.65473 30.405573,20.898624 85.701735 0 1 -6.771159,-19.66808 30.405573,20.898624 85.701735 0 1 0.758608,-11.9326 z"
-         id="rect1358" />
-      <path
-         id="path951"
+         />
+      <path id="rightHair"
          d="m 78.274369,62.34547 a 29.645769,21.871974 75.413493 0 1 0.11522,0.27234 29.645769,21.871974 75.413493 0 1 0.945169,2.80189 29.645769,21.871974 75.413493 0 1 0.73742,2.87011 29.645769,21.871974 75.413493 0 1 0,5.3e-4 29.645769,21.871974 75.413493 0 1 0.52039,2.9099 29.645769,21.871974 75.413493 0 1 0.29972,2.919719 29.645769,21.871974 75.413493 0 1 0.0765,2.900601 29.645769,21.871974 75.413493 0 1 -0.147798,2.853082 29.645769,21.871974 75.413493 0 1 -0.37052,2.776029 29.645769,21.871974 75.413493 0 1 -0.589622,2.67222 29.645769,21.871974 75.413493 0 1 -0.802539,2.540918 29.645769,21.871974 75.413493 0 1 -1.007689,2.384351 29.645769,21.871974 75.413493 0 1 -1.203011,2.204511 29.645769,21.871974 75.413493 0 1 -1.385959,2.00247 29.645769,21.871974 75.413493 0 1 -1.555461,1.77972 29.645769,21.871974 75.413493 0 1 -1.36271,1.258329 24.22887,12.258373 0 0 0 -1.289849,-1.03714 24.22887,12.258373 0 0 0 -1.487771,-0.96687 24.22887,12.258373 0 0 0 -1.67069,-0.88728 24.22887,12.258373 0 0 0 -1.50844,-0.65473 20.898624,30.405573 4.298265 0 0 6.771161,-19.66808 20.898624,30.405573 4.298265 0 0 -0.758611,-11.9326 z"
          style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <path
@@ -264,16 +269,45 @@
          d="m 15.446518,139.39524 a 4.238843,6.8585924 30 0 1 3.87,-3.75541 l 0.79979,-1.46799 2.430105,1.40301 2.471276,1.4268 -0.904296,1.48045 a 4.238843,6.8585924 30 0 1 -1.325586,5.15163 l -0.895036,1.55025 -7.341283,-4.23849 z"
          style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06122761;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
-    <ellipse
-       ry="4.8282843"
-       rx="50.399849"
-       cy="210.67899"
-       cx="52.004196"
-       id="path2992"
-       style="opacity:0.3;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.19388485;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <g
-       transform="rotate(15,42.552769,148.91478)"
        id="leftLeg">
+      <path
+         id="path1298"
+         d="m 34.204759,210.68586 h 16.215547 a 9.4010866,19.607945 9.9999998e-7 0 1 0.01292,0.0476 v 1.58284 h -16.23157 l -10e-7,-1.61851 a 9.4010866,19.607945 9.9999998e-7 0 1 0.003,-0.0119 z"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.32265887;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1300"
+         d="m 42.316923,200.93038 a 9.4010866,19.607945 9.9999998e-7 0 1 8.103383,9.75548 H 34.204759 a 9.4010866,19.607945 9.9999998e-7 0 1 8.112164,-9.75548 z"
+         style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.32265887;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1302"
+         d="m 42.196516,195.05684 a 3.6801348,21.144374 9.9999998e-7 0 1 2.38125,5.0581 l -0.0677,0.20513 0.553455,2.66962 a 4.8883668,5.1502739 9.9999998e-7 0 1 -2.729034,0.88005 4.8883668,5.1502739 9.9999998e-7 0 1 -2.973979,-1.06765 l 0.267686,-2.64635 0.186041,0.006 a 3.6801348,21.144374 9.9999998e-7 0 1 2.38228,-5.10511 z"
+         style="opacity:1;fill:#d7af94;fill-opacity:1;stroke:none;stroke-width:0.29227254;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1304"
+         d="m 50.107662,209.66938 a 9.4010866,19.607945 9.9999998e-7 0 1 0.312647,1.01648 h -16.21555 a 9.4010866,19.607945 9.9999998e-7 0 1 0.316769,-1.01648 z"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.02444615;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1306"
+         d="m 45.173474,203.80608 -6.213288,2.38321 6.47313,2.29923 h -6.473001 l 6.473002,-2.30008 -6.473003,-2.3822"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         id="path1100"
+         d="m 42.209683,166.85803 a 4.9804167,18.586215 0 0 1 3.01739,5.72627 6.3969564,9.7414657 0 0 1 2.408118,7.61401 6.3969564,9.7414657 0 0 1 -1.057813,5.35576 4.9804167,18.586215 0 0 1 -0.421163,7.19799 4.8883668,5.1493997 0 0 1 0.0015,0.003 4.9804167,18.586215 0 0 1 -0.493509,3.24168 4.9804167,18.586215 0 0 1 1e-5,0.003 4.9804167,18.586215 0 0 1 -0.266653,1.28466 l -0.0036,-6e-5 a 4.9804167,18.586215 0 0 1 -0.877463,3.03653 4.8883668,5.1493997 0 0 1 -2.306824,0.6119 4.8883668,5.1493997 0 0 1 -2.575036,-0.77618 l -0.124025,-2.8722 -0.242362,-5.60585 -0.809254,-18.73891 3.750678,2.04744 z"
+         style="opacity:1;fill:#ffcfaf;fill-opacity:1;stroke:none;stroke-width:0.22864771;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1073"
+         d="m 49.214425,148.91494 a 6.2170249,18.586216 0 0 1 0.453201,3.6463 6.2170249,18.586216 0 0 1 0.202059,4.64209 6.2170249,18.586216 0 0 1 -6.21668,18.58594 6.2170249,18.586216 0 0 1 -6.217187,-18.58594 v -8.28839 l 0.01647,-2.7e-4 0.638718,-1e-5 z"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0509255;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <ellipse
+         ry="5.1502743"
+         rx="4.8883667"
+         cy="172.93797"
+         cx="43.347515"
+         id="ellipse1094"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29227254;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <!-- <g id="leftLeg">
       <path
          id="path1298"
          d="m 18.501678,206.42044 15.663016,4.19689 a 9.4010866,19.607945 15.000001 0 1 1.67e-4,0.0493 l -0.40967,1.52891 -15.678493,-4.20104 0.4189,-1.56336 a 9.4010866,19.607945 15.000001 0 1 0.006,-0.0107 z"
@@ -310,10 +344,8 @@
          id="ellipse1094"
          style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29227254;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          transform="rotate(15)" />
-    </g>
-    <g
-       transform="rotate(-45,60.291122,148.90782)"
-       id="rightLeg">
+    </g> -->
+    <g id="rightLeg">
       <path
          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.32265887;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 68.639244,210.67874 H 52.423696 a 9.4010866,19.607945 0 0 0 -0.01291,0.0476 v 1.58284 h 16.231566 v -1.61851 a 9.4010866,19.607945 0 0 0 -0.0031,-0.0119 z"
@@ -386,7 +418,7 @@
          d="m 87.456934,139.38754 a 6.8585924,4.238843 60 0 0 -3.869997,-3.75541 l -0.799793,-1.46799 -2.4301,1.40301 -2.471277,1.4268 0.904296,1.48045 a 6.8585924,4.238843 60 0 0 1.325586,5.15163 l 0.895038,1.55025 7.341283,-4.23849 z"
          id="path1013" />
     </g>
-    </g>
+  </g>
 </svg>
 </template>
 
@@ -397,23 +429,105 @@ export default {
 </script>
 
 <style>
-    /* #leftArmAnimator{
-        -webkit-animation-duration: 4s;
-        animation-duration: 4s;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        
-        transform-box: fill-box;
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-animation-name: HJGRpfq17Q_SyxV79yXQ_Animation;
-        animation-name: HJGRpfq17Q_SyxV79yXQ_Animation;
-    } */
+
+.centralPosition {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #6a7590ff;
+}
+
+#nadia {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+	-webkit-animation-name: bodyAnimation;
+	animation-name: bodyAnimation;
+
+    -webkit-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+@-webkit-keyframes 
+bodyAnimation {
+    0%{-webkit-transform: translateY(0px);transform: translateY(0px);}
+    50%{-webkit-transform: translateY(-20px);transform: translateY(-20px);}
+    100%{-webkit-transform: translateY(0px);transform: translateY(0px);}
+}
+
+@keyframes 
+bodyAnimation {
+    0%{-webkit-transform: translateY(0px);transform: translateY(0px);}
+    50%{-webkit-transform: translateY(-20px);transform: translateY(-20px);}
+    100%{-webkit-transform: translateY(0px);transform: translateY(0px);}
+}
+
+#leftHair {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+	-webkit-animation-name: leftHairAnimation;
+	animation-name: leftHairAnimation;
+
+    -webkit-transform-origin: 27.3734px 64.795044px;
+	transform-origin: 27.3734px 64.795044px;
+
+	-webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+
+@-webkit-keyframes 
+leftHairAnimation {
+    0%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+    50%{-webkit-transform: rotate(10deg);transform: rotate(10deg);}
+    100%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+}
+
+@keyframes 
+leftHairAnimation {
+    0%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+    50%{-webkit-transform: rotate(10deg);transform: rotate(10deg);}
+    100%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+}
+
+#rightHair {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+	-webkit-animation-name: rightHairAnimation;
+	animation-name: rightHairAnimation;
+
+    -webkit-transform-origin: 75.471186px 64.795043px;
+	transform-origin: 75.471186px 64.795043px;
+
+	-webkit-transform: rotate(5deg);
+	transform: rotate(5deg);
+}
+
+@-webkit-keyframes 
+rightHairAnimation {
+    0%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+    50%{-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+    100%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+}
+
+@keyframes 
+rightHairAnimation {
+    0%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+    50%{-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+    100%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+}
+
 #leftArm {
-    -webkit-animation-duration: 4s;
-    animation-duration: 4s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
 
@@ -422,14 +536,25 @@ export default {
 
     -webkit-transform-origin: 34.900535px 104.69466px;
 	transform-origin: 34.900535px 104.69466px;
+}
 
-	-webkit-transform: rotate(0deg);
-	transform: rotate(0deg);
+@-webkit-keyframes 
+leftArmAnimation {
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+@keyframes 
+leftArmAnimation {
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
 #rightArm {
-    -webkit-animation-duration: 4s;
-    animation-duration: 4s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
 
@@ -438,34 +563,75 @@ export default {
 
 	-webkit-transform-origin: 67.944046px 104.69466px;
 	transform-origin: 67.944046px 104.69466px;
+}
 
-	-webkit-transform: rotate(0deg);
-	transform: rotate(0deg);
-    }
-
-    @-webkit-keyframes 
-    rightArmAnimation{
+@-webkit-keyframes 
+rightArmAnimation {
     0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
     50%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
-    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
 
-    @keyframes 
-    rightArmAnimation{
+@keyframes 
+rightArmAnimation {
     0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
     50%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
-    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
 
-    @-webkit-keyframes 
-    leftArmAnimation{
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
-    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+#leftLeg {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
 
-    @keyframes 
-    leftArmAnimation{
+	-webkit-animation-name: leftLegAnimation;
+	animation-name: leftLegAnimation;
+
+    -webkit-transform-origin: 42.557205px 148.91477px;
+	transform-origin: 42.557205px 148.91477px;
+}
+
+@-webkit-keyframes 
+leftLegAnimation {
     0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
-    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}}
+    50%{-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+@keyframes 
+leftLegAnimation {
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+#rightLeg {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+	-webkit-animation-name: rightLegAnimation;
+	animation-name: rightLegAnimation;
+
+    -webkit-transform-origin: 60.291122px 148.91478px;
+	transform-origin: 60.291122px 148.91478px;
+}
+
+@-webkit-keyframes 
+rightLegAnimation {
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+@keyframes 
+rightLegAnimation {
+    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
 </style>
 
 
