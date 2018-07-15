@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    id="svg2706"
    version="1.1"
-   viewBox="-18 20 136 297"
+   viewBox="-18 0 136 220"
    width="100%">
     <ellipse
         ry="4.8282843"
