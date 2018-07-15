@@ -1,7 +1,7 @@
 <template>
     <div id="main" ref="container">
         <h1 class="unselectable">Медболов поймано: {{ballsClicked}}</h1>
-        <button @click="gotoNextLevel">Click me!</button>
+        <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button>
     </div>    
 </template>
 
@@ -28,7 +28,10 @@ export default {
         ...mapState({
             ballsClicked: state => state.ballsClicked,
             ballsTotal: state => state.ballsTotal
-        })
+        }),
+        nextLevelUnlocked() {
+            return this.ballsClicked >= 20;
+        }
     },
     methods : {
         gotoNextLevel() {
@@ -40,7 +43,11 @@ export default {
                 return;
             var ComponentClass = Vue.extend(Ball)
             var instance = new ComponentClass({
-                parent: this
+                parent: this,
+                propsData: { 
+                    parentWidth: window.innerWidth,
+                    parentHeight: window.innerHeight
+                }
             })
             instance.$mount() // pass nothing
             this.container.appendChild(instance.$el)
@@ -67,7 +74,8 @@ export default {
 
 <style scoped>
     #main {
-        background-color: #6a7590ff; 
+        background: linear-gradient(#6a7590ff, rgb(83, 91, 112));
+        /* background-color: #6a7590ff;  */
         position:fixed;
         width:100%;
         height:100%;

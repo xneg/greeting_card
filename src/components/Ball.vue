@@ -3,7 +3,10 @@
         id="ball" 
         v-touch:tap= "click" 
         ref="ball" 
-        :style='{left: initialPosition}' 
+        :style='{
+            left: initialLeftPosition,
+            bottom: initialBottomPosition
+        }' 
         v-if="alive"
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:cc="http://creativecommons.org/ns#"
@@ -94,23 +97,35 @@ import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
 import { mapMutations } from 'vuex'
 
 export default {
-    name: "Ball",
+    props: ['parentWidth', 'parentHeight'],
     data: function() {
         return {
             alive: true,
             clicked: false,
-            ball: null
+            ball: null,
+            leftSide: false,
         }
     },
     computed: {
-        initialPosition: function() {
-            return this.getRandomArbitrary(10, 90) + '%';
+        initialBottomPosition() {
+            return this.getRandomInRange(this.parentHeight / 2, this.parentHeight - 50) + 'px';
         },
-        finalPosition: function() {
-            if (Math.random() > 0.5)
-                return "+=300";
+        initialLeftPosition() {
+            this.leftSide = Math.random() >= 0.5;
+            // todo: потом улучшить
+            if (this.leftSide)
+                //todo: пока константа
+                return '-50px';
             else
-                return "-=300";
+                return this.parentWidth + 'px';
+        },
+        finalPosition() {
+            // потом тоже улучшить
+            var randomLength = this.getRandomInRange(this.parentWidth / 2, this.parentWidth - 50);
+            if (this.leftSide)
+                return "+=" + randomLength;
+            else
+                return "-=" + randomLength;
         }
     },
     methods: {
@@ -133,14 +148,15 @@ export default {
                 this.destroy();
             }
         },
-        getRandomArbitrary(min, max) {
+        getRandomInRange(min, max) {
             return Math.random() * (max - min) + min;  
         },
         play(destroy, finalPosition) {
-            TweenMax.to(this.ball, 2, {rotation: 360}); 
+            var rotation = this.leftSide ? 360: -360;
+            TweenMax.to(this.ball, 4, {rotation: rotation}); 
             var tl = new TimelineLite();
             tl.to(this.ball, 3, {bottom: 0, ease:Bounce.easeOut})
-              .to(this.ball, 2.5, {x: finalPosition, onComplete: destroy}, "-=1.9");
+              .to(this.ball, 3, {x: finalPosition, onComplete: destroy}, "-=3");
         }
     },
     mounted() {
