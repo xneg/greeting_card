@@ -1,10 +1,7 @@
 <template>
-    <div id="app" ref="container">
-        <p class="unselectable">Balls clicked: {{ballsClicked}}</p>
-        <svg width="400" height="110" v-touch:tap="alert">
-            <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
-        </svg>
-        <button @click="alert">Click me!</button>
+    <div id="main" ref="container">
+        <h1 class="unselectable">Медболов поймано: {{ballsClicked}}</h1>
+        <button @click="gotoNextLevel">Click me!</button>
     </div>    
 </template>
 
@@ -23,7 +20,8 @@ export default {
     },
     data: function() {
         return {
-            timer: null
+            timer: null,
+            container: null
         }
     },
     computed: {
@@ -33,8 +31,9 @@ export default {
         })
     },
     methods : {
-        alert: function() {
-            alert("Alert!");
+        gotoNextLevel() {
+            this.stopTimer();
+            this.$router.push('/congrat')
         },
         addBall: function() {
             if (this.ballsTotal > 10)
@@ -44,10 +43,10 @@ export default {
                 parent: this
             })
             instance.$mount() // pass nothing
-            this.$refs.container.appendChild(instance.$el)
+            this.container.appendChild(instance.$el)
         },
         stopTimer: function() {
-
+            clearInterval(this.timer);
         },
         startTimer: function() {
             var vm = this;
@@ -57,6 +56,7 @@ export default {
         }
     },
     mounted: function() {
+        this.container = this.$refs.container;
         window.addEventListener('focus', this.startTimer);
         window.addEventListener('blur', this.stopTimer);
         this.startTimer();
@@ -66,6 +66,15 @@ export default {
 </script>
 
 <style scoped>
+    #main {
+        background-color: #6a7590ff; 
+        position:fixed;
+        width:100%;
+        height:100%;
+        top:0px;
+        left:0px;
+    }
+
     body, html {
         max-width: 100%;
         overflow-x: hidden;

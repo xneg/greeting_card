@@ -1,7 +1,6 @@
 <template>
     <div id="main">
         <div id="centered" class="middle">
-            <!-- <br/> -->
             <happy-birthday-label/>
             <nadia class="nadia"/>
         </div>

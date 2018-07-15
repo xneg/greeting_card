@@ -6,14 +6,15 @@ import CongratulationView from '../views/CongratulationView.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'BallsLevel',
-    //   component: BallsLevel
-    // },
     {
       path: '/',
+      name: 'BallsLevel',
+      component: BallsLevel
+    },
+    {
+      path: '/congrat',
       name: 'CongratulationView',
       component: CongratulationView
     },
