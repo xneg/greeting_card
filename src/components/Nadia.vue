@@ -6,9 +6,8 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    id="svg2706"
-   class="centralPosition"
    version="1.1"
-   viewBox="0 -30 105 297"
+   viewBox="0 20 105 297"
    height="297mm"
    width="100%">
     <ellipse
@@ -430,38 +429,37 @@ export default {
 
 <style>
 
-.centralPosition {
+/* .centralPosition {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #6a7590ff;
-}
+} */
 
 #nadia {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
 
 	-webkit-animation-name: bodyAnimation;
 	animation-name: bodyAnimation;
-
-    -webkit-transform: translateY(-10px);
-	transform: translateY(-10px);
 }
 
 @-webkit-keyframes 
 bodyAnimation {
-    0%{-webkit-transform: translateY(0px);transform: translateY(0px);}
-    50%{-webkit-transform: translateY(-20px);transform: translateY(-20px);}
+    50%{-webkit-transform: translateY(0px);transform: translateY(0px);}
+    75%{-webkit-transform: translateY(-20px);transform: translateY(-20px);}
     100%{-webkit-transform: translateY(0px);transform: translateY(0px);}
 }
 
 @keyframes 
 bodyAnimation {
-    0%{-webkit-transform: translateY(0px);transform: translateY(0px);}
-    50%{-webkit-transform: translateY(-20px);transform: translateY(-20px);}
+    50%{-webkit-transform: translateY(0px);transform: translateY(0px);}
+    75%{-webkit-transform: translateY(-20px);transform: translateY(-20px);}
     100%{-webkit-transform: translateY(0px);transform: translateY(0px);}
 }
 
@@ -470,6 +468,8 @@ bodyAnimation {
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
 
 	-webkit-animation-name: leftHairAnimation;
 	animation-name: leftHairAnimation;
@@ -477,22 +477,26 @@ bodyAnimation {
     -webkit-transform-origin: 27.3734px 64.795044px;
 	transform-origin: 27.3734px 64.795044px;
 
-	-webkit-transform: rotate(-5deg);
-	transform: rotate(-5deg);
+	-webkit-transform: rotate(5deg);
+	transform: rotate(5deg);
 }
 
 @-webkit-keyframes 
 leftHairAnimation {
-    0%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
-    50%{-webkit-transform: rotate(10deg);transform: rotate(10deg);}
-    100%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+    50%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    60%{-webkit-transform: rotate(-3deg);transform: rotate(-3deg);}
+    80%{-webkit-transform: rotate(-3deg);transform: rotate(-3deg);}
+    100%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
 }
 
 @keyframes 
 leftHairAnimation {
-    0%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
-    50%{-webkit-transform: rotate(10deg);transform: rotate(10deg);}
-    100%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+    50%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    60%{-webkit-transform: rotate(-3deg);transform: rotate(-3deg);}
+    80%{-webkit-transform: rotate(-3deg);transform: rotate(-3deg);}
+    100%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
 }
 
 #rightHair {
@@ -507,22 +511,26 @@ leftHairAnimation {
     -webkit-transform-origin: 75.471186px 64.795043px;
 	transform-origin: 75.471186px 64.795043px;
 
-	-webkit-transform: rotate(5deg);
-	transform: rotate(5deg);
+    -webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
 }
 
 @-webkit-keyframes 
 rightHairAnimation {
-    0%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
-    50%{-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
-    100%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+    50%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    60%{-webkit-transform: rotate(3deg);transform: rotate(3deg);}
+    80%{-webkit-transform: rotate(3deg);transform: rotate(3deg);}
+    100%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
 }
 
 @keyframes 
 rightHairAnimation {
-    0%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
-    50%{-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
-    100%{-webkit-transform: rotate(5deg);transform: rotate(5deg);}
+    50%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    60%{-webkit-transform: rotate(3deg);transform: rotate(3deg);}
+    80%{-webkit-transform: rotate(3deg);transform: rotate(3deg);}
+    100%{-webkit-transform: rotate(-5deg);transform: rotate(-5deg);}
 }
 
 #leftArm {
@@ -530,6 +538,8 @@ rightHairAnimation {
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
 
 	-webkit-animation-name: leftArmAnimation;
 	animation-name: leftArmAnimation;
@@ -540,23 +550,26 @@ rightHairAnimation {
 
 @-webkit-keyframes 
 leftArmAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
 @keyframes 
 leftArmAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(120deg);transform: rotate(120deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
+
 
 #rightArm {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
 
 	-webkit-animation-name: rightArmAnimation;
 	animation-name: rightArmAnimation;
@@ -567,15 +580,15 @@ leftArmAnimation {
 
 @-webkit-keyframes 
 rightArmAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
 @keyframes 
 rightArmAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(-120deg);transform: rotate(-120deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
@@ -584,6 +597,8 @@ rightArmAnimation {
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
 
 	-webkit-animation-name: leftLegAnimation;
 	animation-name: leftLegAnimation;
@@ -594,15 +609,15 @@ rightArmAnimation {
 
 @-webkit-keyframes 
 leftLegAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(15deg);transform: rotate(15deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
 @keyframes 
 leftLegAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(15deg);transform: rotate(15deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
@@ -621,15 +636,15 @@ leftLegAnimation {
 
 @-webkit-keyframes 
 rightLegAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 
 @keyframes 
 rightLegAnimation {
-    0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    50%{-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    50%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    75%{-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
     100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
 }
 </style>
