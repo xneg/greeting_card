@@ -5,7 +5,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   id="svg926"
    version="1.1"
    viewBox="0 0 118.63477 25.651005"
    height="25.651005mm"
@@ -77,5 +76,12 @@
     </g>
   </g>
 </svg>
-
 </template>
+
+<style scoped>
+svg {
+  width: 90%;
+  max-width: 400px;
+}
+</style>
+
