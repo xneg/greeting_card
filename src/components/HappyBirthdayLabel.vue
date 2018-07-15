@@ -6,8 +6,7 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
-   viewBox="0 0 118.63477 25.651005"
-   height="25.651005mm"
+   viewBox="0 0 118.63477 25"
    width="50%">
   <g
      transform="translate(19.461709,-124.32554)"
