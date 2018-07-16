@@ -9,6 +9,7 @@ export default new Vuex.Store({
     state: {
         ballsClicked: 0,
         ballsTotal: 0,
+        absCount: 0
     },
     mutations: {
         ballsClickedIncrement(state) {
@@ -20,6 +21,7 @@ export default new Vuex.Store({
         },
         ballsTotalDecrement(state) {
             state.ballsTotal--;
-        }
+        },
+        absCountIncrement: (state) => state.absCount++
     }
 })

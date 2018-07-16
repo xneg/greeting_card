@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import StartView from '../views/StartView.vue'
+import AbsLevel from '../views/AbsLevel.vue'
 import BallsLevel from '../views/BallsLevel.vue'
 import CongratulationView from '../views/CongratulationView.vue'
 
@@ -13,6 +14,11 @@ export default new Router({
       path: '/',
       name: 'StartView',
       component: StartView
+    },
+    {
+      path: '/abs',
+      name: 'AbsLevel',
+      component: AbsLevel
     },
     {
       path: '/balls',

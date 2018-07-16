@@ -69,7 +69,6 @@ export default {
         this.startTimer();
     }
 }
-
 </script>
 
 <style scoped>

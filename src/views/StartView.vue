@@ -29,7 +29,7 @@ import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
 export default {
     methods : {
         gotoNextLevel() {
-            this.$router.push('/balls')
+            this.$router.push('/abs')
         }
     },
     mounted() {
