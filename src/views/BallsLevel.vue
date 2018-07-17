@@ -62,7 +62,7 @@ export default {
             }, 500);
         }
     },
-    mounted: function() {
+    mounted() {
         this.container = this.$refs.container;
         window.addEventListener('focus', this.startTimer);
         window.addEventListener('blur', this.stopTimer);

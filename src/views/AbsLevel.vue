@@ -33,7 +33,7 @@ export default {
 
 <style scoped>
     #main {
-        background: linear-gradient(#6a7590ff, rgb(83, 91, 112));
+        background: linear-gradient(rgb(46, 101, 241), rgb(22, 32, 58));
         /* background-color: #6a7590ff;  */
         position:fixed;
         width:100%;
