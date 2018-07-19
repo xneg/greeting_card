@@ -141,7 +141,7 @@ svg {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleX(-1);
   width: 90%;
   max-width:350px;
 }
