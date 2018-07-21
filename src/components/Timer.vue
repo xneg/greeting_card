@@ -25,7 +25,6 @@ export default {
     mounted() {
         eventBus.$on('stopTimer', this.stopTimer);
         eventBus.$on('startTimer', this.startTimer);
-        this.startTimer();
     },
     methods: {
         startTimer() {

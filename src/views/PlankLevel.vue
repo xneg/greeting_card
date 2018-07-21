@@ -1,10 +1,15 @@
 <template>
     <div id="main">
         <br/>
-        <timer :maxIntervalMiliseconds="30000"/>
+        <timer :maxIntervalMiliseconds="30000" ref="timer"/>
         <button @click="gotoNextLevel" v-if="timerFinished">Click me!</button>
-        <plank-man/>
+        <plank-man ref="plankMan"/>
         <component :is="floatingTextComponent">{{ cheering }}</component>
+
+        <modal-dialog v-if="showModalDialog" @close="onModalDialogClose">
+            <h3 slot="header">Планка</h3>
+            <p slot="body">Удерживай планку 30 секунд. Не расслабляйся и не отлынивай!</p>
+        </modal-dialog>
     </div>
 </template>
 
@@ -13,19 +18,22 @@ import { eventBus } from '../main.js';
 import PlankMan from '../components/PlankMan'
 import FloatingText from '../components/FloatingText'
 import Timer from '../components/Timer'
+import ModalDialog from '../components/ModalDialog'
 
 export default {
     name: "PlankLevel",
     components: {
         PlankMan,
         FloatingText,
-        Timer
+        Timer,
+        ModalDialog
     },    
     data() {
         return {
             floatingTextComponent: null,
             timerFinished: false,
-            cheering: ''
+            cheering: '',
+            showModalDialog: true
         }
     },
     mounted() {
@@ -33,6 +41,11 @@ export default {
         eventBus.$on('timerFinished', this.openNextLevel);
     },
     methods: {
+        onModalDialogClose() {
+            this.showModalDialog = false;
+            this.$refs.plankMan.start();
+            this.$refs.timer.startTimer();
+        },
         showFloatingText(mileStone) {
             console.log(mileStone);
             if (mileStone == 0.25)

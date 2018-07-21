@@ -2,12 +2,18 @@
     <div id="main" ref="container">
         <h1 class="unselectable">Медболов поймано: {{ballsClicked}}</h1>
         <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button>
+
+        <modal-dialog v-if="showModalDialog" @close="onModalDialogClose">
+            <h3 slot="header">Упражение с медболами</h3>
+            <p slot="body">Попробуй поймать 20 медболов. Не так просто, как кажется!</p>
+        </modal-dialog>
     </div>    
 </template>
 
 <script>
 import Vue from 'vue'
 import Ball from '../components/Ball'
+import ModalDialog from '../components/ModalDialog'
 import { mapGetters, mapState } from 'vuex'
 import VueTouch from 'vue-touch';
 
@@ -16,12 +22,14 @@ Vue.use(VueTouch);
 export default {
     name: "BallsLevel",
     components: {
-        Ball
+        Ball,
+        ModalDialog
     },
     data: function() {
         return {
             timer: null,
-            container: null
+            container: null,
+            showModalDialog: true
         }
     },
     computed: {
@@ -36,7 +44,7 @@ export default {
     methods : {
         gotoNextLevel() {
             this.stopTimer();
-            this.$router.push('/congrat')
+            this.$router.push('/abs')
         },
         addBall: function() {
             if (this.ballsTotal > 10)
@@ -60,13 +68,16 @@ export default {
             this.timer = setInterval(function() {
                 vm.addBall();
             }, 500);
-        }
+        },
+        onModalDialogClose() {
+            this.showModalDialog = false;
+            this.startTimer();
+        },
     },
     mounted() {
         this.container = this.$refs.container;
         window.addEventListener('focus', this.startTimer);
         window.addEventListener('blur', this.stopTimer);
-        this.startTimer();
     }
 }
 </script>

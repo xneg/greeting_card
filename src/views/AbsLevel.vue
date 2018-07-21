@@ -3,17 +3,29 @@
         <h1>Скручиваний: {{absCount}}</h1>
         <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button>
         <abs-man/>
+
+        <modal-dialog v-if="showModalDialog" @close="showModalDialog = false">
+            <h3 slot="header">Скручивания</h3>
+            <p slot="body">Здесь всё просто. 20 скручиваний - это легко!</p>
+        </modal-dialog>
     </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import AbsMan from '../components/AbsMan'
+import ModalDialog from '../components/ModalDialog'
 
 export default {
     name: "AbsLevel",
+    data() {
+        return {
+            showModalDialog: true
+        }
+    },
     components: {
-        AbsMan
+        AbsMan,
+        ModalDialog
     },
     computed: {
         ...mapState({
@@ -25,7 +37,7 @@ export default {
     },
     methods: {
         gotoNextLevel() {
-            this.$router.push('/balls')
+            this.$router.push('/congrat')
         },
     }
 }

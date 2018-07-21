@@ -115,14 +115,16 @@ export default {
     },
     mounted() {
         this.body = this.$refs.body;
-        var vm = this;
-        this.timer = setTimeout(function() {
-            vm.tired = true;
-        }, 1000);
-        vm.body.addEventListener("transitionend", this.stopTimer, false);
     },
     methods: {
-        click: function() {
+        start() {
+          var vm = this;
+          this.timer = setTimeout(function() {
+            vm.tired = true;
+          }, 1000);
+          vm.body.addEventListener("transitionend", this.stopTimer, false);
+        },
+        click() {
             clearTimeout(this.timer);
             this.tired = false;
             this.body.removeEventListener("transitionend", this.stopTimer);
