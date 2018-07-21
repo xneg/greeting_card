@@ -38,7 +38,7 @@
              transform="scale(0.26458333)"
              id="rect987-8-0" />
         </g>
-        <g id="foot" :class="{footTired: tired}" :style="{transition: transition}">
+        <g id="foot" :class="{footTired: tired}" :style="{transition: transition}" ref="body">
           <path
              style="opacity:1;fill:#375ec8;fill-opacity:1;stroke:none;stroke-width:12.9420681;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              d="m -229.81708,159.04573 -0.01,0.022 a 19.413101,19.413101 0 0 0 0.2141,-1.1543 19.413101,19.413101 0 0 0 -16.629,-21.8449 19.413101,19.413101 0 0 0 -21.8452,16.629 l -11.2487,56.8856 v -0.01 a 11.415195,11.415195 0 0 0 -0.2759,1.34649 11.415195,11.415195 0 0 0 9.7781,12.8456 11.415195,11.415195 0 0 0 11.9327,-6.61649 l 0.015,0.01 23.8623,-49.3656 a 19.413101,19.413101 0 0 0 4.1858,-8.659 z"
@@ -102,35 +102,47 @@
 </template>
 
 <script>
+import { eventBus } from '../main.js';
+
 export default {
     data() {
         return {
             tired: false,
             transition: 'transform 3s',
             timer: null,
-            man: null
+            body: null
         }
     },
     mounted() {
-        this.man = this.$refs.man;
+        this.body = this.$refs.body;
         var vm = this;
         this.timer = setTimeout(function() {
             vm.tired = true;
         }, 1000);
+        vm.body.addEventListener("transitionend", this.stopTimer, false);
     },
     methods: {
         click: function() {
             clearTimeout(this.timer);
             this.tired = false;
-
-            this.man.addEventListener("transitionend", this.getTired, false);
+            this.body.removeEventListener("transitionend", this.stopTimer);
+            this.body.addEventListener("transitionend", this.afterRightPosition, false);
+        },
+        afterRightPosition() {
+            eventBus.$emit('startTimer');
+            this.getTired();
         },
         getTired() {
-            this.man.removeEventListener("transitionend", this.getTired);
+            this.body.removeEventListener("transitionend", this.afterRightPosition, false);
+            this.body.addEventListener("transitionend", this.stopTimer, false);
+
             var vm = this;
             this.timer = setTimeout(function() {
                 vm.tired = true;
             }, 1000);
+        },
+        stopTimer() {
+            eventBus.$emit('stopTimer');
         }
     }               
 }

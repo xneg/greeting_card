@@ -1,15 +1,15 @@
 <template>
     <div id="main">
-        <timer/>
-        <!-- <h1>Скручиваний: {{absCount}}</h1>
-        <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button> -->
+        <br/>
+        <timer :maxIntervalMiliseconds="30000"/>
+        <button @click="gotoNextLevel" v-if="timerFinished">Click me!</button>
         <plank-man/>
-        <floating-text text="Ещё немного!" v-if="showFloatingText" class="floatingText"/>
-        <button @click="showFloatingText = true">Click me</button>
+        <component :is="floatingTextComponent">{{ cheering }}</component>
     </div>
 </template>
 
 <script>
+import { eventBus } from '../main.js';
 import PlankMan from '../components/PlankMan'
 import FloatingText from '../components/FloatingText'
 import Timer from '../components/Timer'
@@ -23,7 +23,33 @@ export default {
     },    
     data() {
         return {
-            showFloatingText: false
+            floatingTextComponent: null,
+            timerFinished: false,
+            cheering: ''
+        }
+    },
+    mounted() {
+        eventBus.$on('mileStone', mileStone => this.showFloatingText(mileStone));
+        eventBus.$on('timerFinished', this.openNextLevel);
+    },
+    methods: {
+        showFloatingText(mileStone) {
+            console.log(mileStone);
+            if (mileStone == 0.25)
+                this.cheering = 'Ты справишься!';
+            else if (mileStone == 0.5)
+                this.cheering = 'Половина пройдена!';
+            else if (mileStone == 0.75)
+                this.cheering = 'Осталось чуть-чуть!';
+            this.floatingTextComponent = 'floating-text';
+            var vm = this;
+            setTimeout(function() {vm.floatingTextComponent = null}, 2000);
+        },
+        gotoNextLevel() {
+            this.$router.push('/balls')
+        },
+        openNextLevel() {
+            this.timerFinished = true;
         }
     }
 }

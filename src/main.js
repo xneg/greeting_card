@@ -14,6 +14,8 @@ Vue.use(Vuex);
 Vue.use(VueTouch);
 Vue.use(Vue2TouchEvents);
 
+export const eventBus = new Vue();
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
