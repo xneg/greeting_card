@@ -6,8 +6,11 @@
         <plank-man ref="plankMan"/>
         <component :is="floatingTextComponent">{{ cheering }}</component>
 
-        <modal-dialog v-if="showModalDialog" @close="onModalDialogClose">
-            <h3 slot="header">Планка</h3>
+        <modal-dialog 
+        v-if="showModalDialog" 
+        @close="onModalDialogClose"
+        headerColor="rgb(245, 88, 88)">
+            <h2 slot="header">Планка</h2>
             <p slot="body">Удерживай планку 30 секунд. Не расслабляйся и не отлынивай!</p>
         </modal-dialog>
     </div>
@@ -47,7 +50,6 @@ export default {
             this.$refs.timer.startTimer();
         },
         showFloatingText(mileStone) {
-            console.log(mileStone);
             if (mileStone == 0.25)
                 this.cheering = 'Ты справишься!';
             else if (mileStone == 0.5)

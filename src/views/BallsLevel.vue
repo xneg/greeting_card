@@ -3,8 +3,11 @@
         <h1 class="unselectable">Медболов поймано: {{ballsClicked}}</h1>
         <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button>
 
-        <modal-dialog v-if="showModalDialog" @close="onModalDialogClose">
-            <h3 slot="header">Упражение с медболами</h3>
+        <modal-dialog 
+            v-if="showModalDialog" 
+            @close="onModalDialogClose"
+            headerColor="#6a7590ff">
+            <h2 slot="header">Упражение с медболами</h2>
             <p slot="body">Попробуй поймать 20 медболов. Не так просто, как кажется!</p>
         </modal-dialog>
     </div>    

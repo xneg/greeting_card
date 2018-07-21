@@ -3,9 +3,14 @@
         <h1>Скручиваний: {{absCount}}</h1>
         <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button>
         <abs-man/>
+        <button @click="showFloatingText">Click me</button>
+        <component :is="floatingTextComponent">Какой-то текст.</component>
 
-        <modal-dialog v-if="showModalDialog" @close="showModalDialog = false">
-            <h3 slot="header">Скручивания</h3>
+        <modal-dialog 
+        v-if="showModalDialog" 
+        @close="showModalDialog = false"
+        headerColor="rgb(46, 101, 241)">
+            <h2 slot="header">Скручивания</h2>
             <p slot="body">Здесь всё просто. 20 скручиваний - это легко!</p>
         </modal-dialog>
     </div>
@@ -15,17 +20,20 @@
 import { mapState } from 'vuex'
 import AbsMan from '../components/AbsMan'
 import ModalDialog from '../components/ModalDialog'
+import FloatingText from '../components/FloatingText'
 
 export default {
     name: "AbsLevel",
     data() {
         return {
-            showModalDialog: true
+            showModalDialog: true,
+            floatingTextComponent: null,
         }
     },
     components: {
         AbsMan,
-        ModalDialog
+        ModalDialog,
+        FloatingText
     },
     computed: {
         ...mapState({
@@ -36,6 +44,11 @@ export default {
         }
     },
     methods: {
+        showFloatingText() {
+            this.floatingTextComponent = 'floating-text';
+            var vm = this;
+            setTimeout(function() {vm.floatingTextComponent = null}, 2000);
+        },
         gotoNextLevel() {
             this.$router.push('/congrat')
         },
@@ -46,7 +59,6 @@ export default {
 <style scoped>
     #main {
         background: linear-gradient(rgb(46, 101, 241), rgb(22, 32, 58));
-        /* background-color: #6a7590ff;  */
         position:fixed;
         width:100%;
         height:100%;
