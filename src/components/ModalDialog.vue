@@ -26,7 +26,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
                     viewBox="0 0 33.505444 19.21764"
-                    width="80px">
+                    width="30%">
                     <g
                         transform="translate(-95.567817,-122.64018)"
                         id="layer1">

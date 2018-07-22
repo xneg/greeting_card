@@ -92,23 +92,5 @@ body, html {
     transform: translateX(-50%);
     top: 200px;
 }
-
-/* svg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width:350px;
-} */
-
-/* .unselectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-} */
 </style>
 

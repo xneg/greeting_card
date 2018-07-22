@@ -1,11 +1,14 @@
 <template>
     <div id="main" ref="container">
-        <h1 class="unselectable">Медболов поймано: {{ballsClicked}}</h1>
+        <br>
+        <div id="label">
+            <h1 class="unselectable">Поймано: {{ballsClicked}}</h1>
+        </div>
 
         <modal-dialog 
             v-if="showModalDialog" 
             @close="onModalDialogClose"
-            headerColor="#6a7590ff">
+            headerColor="rgb(150, 165, 201)">
             <h2 slot="header">Упражение с медболами</h2>
             <p slot="body">Попробуй поймать 20 медболов. Не так просто, как кажется!</p>
         </modal-dialog>
@@ -43,8 +46,19 @@ export default {
             ballsTotal: state => state.ballsTotal
         }),
         nextLevelUnlocked() {
-            return this.ballsClicked >= 20;
+            if (this.ballsClicked >= 20)
+            {
+                this.stopTimer();
+                return true;
+            }
+            else
+                return false;
         }
+    },
+    mounted() {
+        this.container = this.$refs.container;
+        window.addEventListener('focus', this.startTimer);
+        window.addEventListener('blur', this.stopTimer);
     },
     methods : {
         addBall: function() {
@@ -63,8 +77,11 @@ export default {
         },
         stopTimer: function() {
             clearInterval(this.timer);
+            this.timer = null;
         },
         startTimer: function() {
+            if (this.timer != null)
+                return;
             var vm = this;
             this.timer = setInterval(function() {
                 vm.addBall();
@@ -74,39 +91,40 @@ export default {
             this.showModalDialog = false;
             this.startTimer();
         },
-    },
-    mounted() {
-        this.container = this.$refs.container;
-        window.addEventListener('focus', this.startTimer);
-        window.addEventListener('blur', this.stopTimer);
-    }
+    } 
 }
 </script>
 
 <style scoped>
-    #main {
-        background: linear-gradient(#6a7590ff, rgb(83, 91, 112));
-        /* background-color: #6a7590ff;  */
-        position:fixed;
-        width:100%;
-        height:100%;
-        top:0px;
-        left:0px;
-    }
+#main {
+    background: linear-gradient(rgb(150, 165, 201), rgb(83, 91, 112));
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+}
 
-    body, html {
-        max-width: 100%;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
+body, html {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
-    .unselectable {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+#label {
+    display: inline-block;
+    padding: 1px 30px;
+    border: 3px solid;
+    border-radius: 10px;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 </style>
 
