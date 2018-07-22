@@ -2,7 +2,6 @@
     <div id="main">
         <br/>
         <timer :maxIntervalMiliseconds="30000" ref="timer"/>
-        <button @click="gotoNextLevel" v-if="timerFinished">Click me!</button>
         <plank-man ref="plankMan"/>
         <component :is="floatingTextComponent">{{ cheering }}</component>
 
@@ -13,6 +12,7 @@
             <h2 slot="header">Планка</h2>
             <p slot="body">Удерживай планку 30 секунд. Не расслабляйся и не отлынивай!</p>
         </modal-dialog>
+        <next-button nextLevel="balls" v-if="timerFinished"/>
     </div>
 </template>
 
@@ -22,6 +22,7 @@ import PlankMan from '../components/PlankMan'
 import FloatingText from '../components/FloatingText'
 import Timer from '../components/Timer'
 import ModalDialog from '../components/ModalDialog'
+import NextButton from '../components/NextButton'
 
 export default {
     name: "PlankLevel",
@@ -29,7 +30,8 @@ export default {
         PlankMan,
         FloatingText,
         Timer,
-        ModalDialog
+        ModalDialog,
+        NextButton
     },    
     data() {
         return {
@@ -59,9 +61,6 @@ export default {
             this.floatingTextComponent = 'floating-text';
             var vm = this;
             setTimeout(function() {vm.floatingTextComponent = null}, 2000);
-        },
-        gotoNextLevel() {
-            this.$router.push('/balls')
         },
         openNextLevel() {
             this.timerFinished = true;

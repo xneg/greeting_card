@@ -1,7 +1,6 @@
 <template>
     <div id="main">
-        <h1>Скручиваний: {{absCount}}</h1>
-        <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button>
+        <h1 class="unselectable">Скручиваний: {{absCount}}</h1>
         <abs-man/>
         <button @click="showFloatingText">Click me</button>
         <component :is="floatingTextComponent">Какой-то текст.</component>
@@ -13,6 +12,7 @@
             <h2 slot="header">Скручивания</h2>
             <p slot="body">Здесь всё просто. 20 скручиваний - это легко!</p>
         </modal-dialog>
+        <next-button nextLevel="congrat" v-if="nextLevelUnlocked"/>
     </div>
 </template>
 
@@ -21,6 +21,7 @@ import { mapState } from 'vuex'
 import AbsMan from '../components/AbsMan'
 import ModalDialog from '../components/ModalDialog'
 import FloatingText from '../components/FloatingText'
+import NextButton from '../components/NextButton'
 
 export default {
     name: "AbsLevel",
@@ -33,7 +34,8 @@ export default {
     components: {
         AbsMan,
         ModalDialog,
-        FloatingText
+        FloatingText,
+        NextButton
     },
     computed: {
         ...mapState({
@@ -48,10 +50,7 @@ export default {
             this.floatingTextComponent = 'floating-text';
             var vm = this;
             setTimeout(function() {vm.floatingTextComponent = null}, 2000);
-        },
-        gotoNextLevel() {
-            this.$router.push('/congrat')
-        },
+        }
     }
 }
 </script>
@@ -72,12 +71,12 @@ export default {
         overflow-y: hidden;
     }
 
-    /* .unselectable {
+    .unselectable {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-    } */
+    }
 </style>

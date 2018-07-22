@@ -1,7 +1,6 @@
 <template>
     <div id="main" ref="container">
         <h1 class="unselectable">Медболов поймано: {{ballsClicked}}</h1>
-        <button @click="gotoNextLevel" v-if="nextLevelUnlocked">Click me!</button>
 
         <modal-dialog 
             v-if="showModalDialog" 
@@ -10,6 +9,7 @@
             <h2 slot="header">Упражение с медболами</h2>
             <p slot="body">Попробуй поймать 20 медболов. Не так просто, как кажется!</p>
         </modal-dialog>
+        <next-button nextLevel="abs" v-if="nextLevelUnlocked"/>
     </div>    
 </template>
 
@@ -19,6 +19,7 @@ import Ball from '../components/Ball'
 import ModalDialog from '../components/ModalDialog'
 import { mapGetters, mapState } from 'vuex'
 import VueTouch from 'vue-touch';
+import NextButton from '../components/NextButton'
 
 Vue.use(VueTouch);
 
@@ -26,7 +27,8 @@ export default {
     name: "BallsLevel",
     components: {
         Ball,
-        ModalDialog
+        ModalDialog,
+        NextButton
     },
     data: function() {
         return {
@@ -45,10 +47,6 @@ export default {
         }
     },
     methods : {
-        gotoNextLevel() {
-            this.stopTimer();
-            this.$router.push('/abs')
-        },
         addBall: function() {
             if (this.ballsTotal > 10)
                 return;
