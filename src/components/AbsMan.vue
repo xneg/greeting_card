@@ -121,10 +121,24 @@ export default {
                 vm.clicked = false;
                 vm.absAdd();
 
-                if (vm.absCount > 12)
-                    vm.animationUp = 1
-                if (vm.absCount > 16)
-                    vm.animationUp = 1.5
+                if (vm.absCount == 5)
+                {
+                    vm.$emit('show-floating-text', "Легко?");
+                }
+                else if (vm.absCount == 12)
+                {
+                    vm.animationUp = 1;
+                    vm.$emit('show-floating-text', "Становится тяжелее!");
+                }
+                else if (vm.absCount == 16)
+                {
+                    vm.animationUp = 1.5;
+                    vm.$emit('show-floating-text', "Последние подходы самые тяжёлые!");
+                }
+                else if (vm.absCount == 19)
+                {
+                    vm.$emit('show-floating-text', "Ты справишься!");
+                }
             }, this.animationUp * 2000);
         }
     }      

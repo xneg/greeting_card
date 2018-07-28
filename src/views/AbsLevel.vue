@@ -4,9 +4,8 @@
         <div id="label">
             <h1 class="unselectable">Скручиваний: {{absCount}}</h1>
         </div>
-        <abs-man/>
-        <!-- <button @click="showFloatingText">Click me</button> -->
-        <component :is="floatingTextComponent">Какой-то текст.</component>
+        <abs-man @show-floating-text="showFloatingText"></abs-man>
+        <component :is="floatingTextComponent">{{ cheering }}</component>
 
         <modal-dialog 
         v-if="showModalDialog" 
@@ -32,6 +31,7 @@ export default {
         return {
             showModalDialog: true,
             floatingTextComponent: null,
+            cheering: ''
         }
     },
     components: {
@@ -49,7 +49,8 @@ export default {
         }
     },
     methods: {
-        showFloatingText() {
+        showFloatingText(cheering) {
+            this.cheering = cheering;
             this.floatingTextComponent = 'floating-text';
             var vm = this;
             setTimeout(function() {vm.floatingTextComponent = null}, 2000);

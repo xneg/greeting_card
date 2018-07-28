@@ -15,8 +15,6 @@
                         default body
                     </slot>
                 </div>
-                <div class="modal-footer">
-                    <slot name="footer">
                     <svg
                     @click="$emit('close')"
                     xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -26,7 +24,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
                     viewBox="0 0 33.505444 19.21764"
-                    width="30%">
+                    class ="okButton">
                     <g
                         transform="translate(-95.567817,-122.64018)"
                         id="layer1">
@@ -36,13 +34,6 @@
                         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:125%;font-family:Freshman;-inkscape-font-specification:Freshman;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.57177991px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
                     </g>
                     </svg>
-
-                    <!-- <button @click="$emit('close')">OK</button> -->
-                    <!-- <button class="modal-default-button" @click="$emit('close')">
-                        OK
-                    </button> -->
-                    </slot>
-                </div>
                 </div>
             </div>
         </div>
@@ -57,6 +48,10 @@ export default {
 
 
 <style>
+.okButton {
+    width: 30%;
+}
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
