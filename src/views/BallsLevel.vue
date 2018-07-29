@@ -4,6 +4,7 @@
         <div id="label">
             <h1 class="unselectable">Поймано: {{ballsClicked}}</h1>
         </div>
+        <component :is="floatingTextComponent">{{ cheering }}</component>
 
         <modal-dialog 
             v-if="showModalDialog" 
@@ -23,6 +24,7 @@ import ModalDialog from '../components/ModalDialog'
 import { mapGetters, mapState } from 'vuex'
 import VueTouch from 'vue-touch';
 import NextButton from '../components/NextButton'
+import FloatingText from '../components/FloatingText'
 
 Vue.use(VueTouch);
 
@@ -31,13 +33,15 @@ export default {
     components: {
         Ball,
         ModalDialog,
-        NextButton
+        NextButton,
+        FloatingText
     },
     data: function() {
         return {
             timer: null,
             container: null,
-            showModalDialog: true
+            showModalDialog: true,
+            floatingTextComponent: null
         }
     },
     computed: {
@@ -53,6 +57,14 @@ export default {
             }
             else
                 return false;
+        },
+        cheering() {
+            if (this.ballsClicked >= 15)
+                return 'Осталось чуть-чуть!';
+            if (this.ballsClicked >= 10)
+                return 'Половина поймана!';
+            if (this.ballsClicked >= 5)
+                return 'Неплохо получается!';
         }
     },
     mounted() {
@@ -73,6 +85,7 @@ export default {
                 }
             })
             instance.$mount() // pass nothing
+            instance.$on('clicked', this.showFloatingText);
             this.container.appendChild(instance.$el)
         },
         stopTimer: function() {
@@ -91,6 +104,13 @@ export default {
             this.showModalDialog = false;
             this.startTimer();
         },
+        showFloatingText() {
+            if (this.ballsClicked >= 20 || this.ballsClicked % 5 != 0)
+                return;
+            this.floatingTextComponent = 'floating-text';
+            var vm = this;
+            setTimeout(function() {vm.floatingTextComponent = null}, 2000);
+        }
     } 
 }
 </script>
@@ -125,6 +145,14 @@ body, html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.floatingText {
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    top: 200px;
 }
 </style>
 

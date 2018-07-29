@@ -89,6 +89,7 @@ body, html {
 .floatingText {
     position: absolute;
     left: 50%;
+    width: 90%;
     transform: translateX(-50%);
     top: 200px;
 }

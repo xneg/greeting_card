@@ -145,6 +145,7 @@ export default {
             {    
                 this.clicked = true;
                 this.addClickedBall();
+                this.$emit('clicked');
                 this.destroy();
             }
         },
