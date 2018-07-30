@@ -1,9 +1,7 @@
 <template>
     <div id="main">
-        <div id="centered" class="middle">
-            <happy-birthday-label/>
-            <nadia class="nadia"/>
-        </div>
+        <happy-birthday-label class="middle"/>
+        <nadia class="nadia"/>
     </div>
 </template>
 
@@ -30,24 +28,14 @@ export default {
     }
 
     .middle {
-        /* display: table-cell;
-        vertical-align: middle; */
         position: relative;
         top: 0%;
         transform: translateY(50%);
     }
 
-    /* #centered {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        width:100%;
-        transform: translate(-50%, -50%);
-    } */
-
     .nadia {
         position: fixed;
-        top: -30px;
+        top: 10px;
         left: 50%;
         transform: translate(-50%, 0%);
     }
